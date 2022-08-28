@@ -348,6 +348,8 @@ function filter_configure_sync($verbose = false, $load_aliases = true)
     $natrules = "\n# NAT Redirects\n";
     $natrules .= "no nat proto carp all\n";
     $natrules .= "no rdr proto carp all\n";
+    $natrules .= "binat-anchor \"miniupnpd\"\n";
+    $natrules .= "nat-anchor \"miniupnpd\"\n";
     $natrules .= $fw->outputNatRules();
 
     if ($verbose) {
